@@ -86,6 +86,10 @@ app.get( '/posts/:id', (req, res) => {
     const post = database.find(id);
     //sends the post to the computer requesting it 
     
+    if(!post.id){
+        res.status(404).send(`Sorry post ${req.params.id} does not exist, <a href='/'>back to the main page</a>`)
+    }
+    else {
     const html = `<!DOCTYPE html>
     <html>
     <head>
@@ -119,6 +123,7 @@ app.get( '/posts/:id', (req, res) => {
     
     
     res.send(html);
+}
 
   });
 
