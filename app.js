@@ -91,16 +91,29 @@ app.get( '/posts/:id', (req, res) => {
     <head>
     <style>
     *{
+        max-width: 1200px;
+        margin: auto;
+    }
+    h1{
         text-align: center;
+    }
+    h2{
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .content{
+        font-size: 1.5rem;
+        padding-bottom: 2rem;
     }
     </style>
     </head>
     <body>
-      <h1>${post.title} by ${post.name}</h1>
+      <h1>${post.title}</h1> 
+      <h2>by ${post.name}</h2>
       <div>
-        <p>${post.content}</p>
+        <p class="content">${post.content}</p>
         <p><a href="/">back to the main page</a></p>
-        </div>  
+      </div>  
     </body>
     </html>`
     
