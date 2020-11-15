@@ -129,7 +129,7 @@ app.get( '/posts/:id', (req, res) => {
 
 //does this make it go to port 1337
 //what exactly is a port??  
-const PORT = 1337;
+const PORT = process.env.PORT ||1337;
 
 //presumably simply for debugging but should double check 
 app.listen(PORT, () => {
